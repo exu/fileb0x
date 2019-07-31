@@ -54,8 +54,8 @@ func main() {
 	flag.StringVar(&fUpdate, "update", "", "-update=http(s)://host:port - default port: 8041")
 	flag.Parse()
 	var (
-		update = fUpdate != ""
-		// up     *updater.Updater
+	// update = fUpdate != ""
+	// up     *updater.Updater
 	)
 
 	// create config and try to get b0x file from args
