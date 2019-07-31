@@ -53,10 +53,6 @@ func main() {
 	// check for updates
 	flag.StringVar(&fUpdate, "update", "", "-update=http(s)://host:port - default port: 8041")
 	flag.Parse()
-	var (
-	// update = fUpdate != ""
-	// up     *updater.Updater
-	)
 
 	// create config and try to get b0x file from args
 	f := new(config.File)
@@ -78,17 +74,10 @@ func main() {
 
 	cfgPath = f.FilePath
 
-	// if err := cfg.Updater.CheckInfo(); err != nil {
-	// 	panic(err)
-	// }
-
-	// cfg.Updater.IsUpdating = update
-
 	// creates a config that can be inserTed into custom
 	// without causing a import cycle
 	sharedConfig := new(custom.SharedConfig)
 	sharedConfig.Output = cfg.Output
-	// sharedConfig.Updater = cfg.Updater
 	sharedConfig.Compression = compression.NewGzip()
 	sharedConfig.Compression.Options = cfg.Compression
 
@@ -131,30 +120,28 @@ func main() {
 		t := new(template.Template)
 		t.Set("files")
 		t.Variables = struct {
-			ConfigFile  string
-			Now         string
-			Pkg         string
-			Files       map[string]*file.File
-			Tags        string
-			Spread      bool
-			Remap       string
-			DirList     []string
-			Compression *compression.Options
-			Debug       bool
-			// Updater          updater.Config
+			ConfigFile       string
+			Now              string
+			Pkg              string
+			Files            map[string]*file.File
+			Tags             string
+			Spread           bool
+			Remap            string
+			DirList          []string
+			Compression      *compression.Options
+			Debug            bool
 			ModificationHash string
 		}{
-			ConfigFile:  filepath.Base(cfgPath),
-			Now:         time.Now().String(),
-			Pkg:         cfg.Pkg,
-			Files:       files,
-			Tags:        cfg.Tags,
-			Remap:       remap,
-			Spread:      cfg.Spread,
-			DirList:     dirs.Clean(),
-			Compression: cfg.Compression,
-			Debug:       cfg.Debug,
-			// Updater:          cfg.Updater,
+			ConfigFile:       filepath.Base(cfgPath),
+			Now:              time.Now().String(),
+			Pkg:              cfg.Pkg,
+			Files:            files,
+			Tags:             cfg.Tags,
+			Remap:            remap,
+			Spread:           cfg.Spread,
+			DirList:          dirs.Clean(),
+			Compression:      cfg.Compression,
+			Debug:            cfg.Debug,
 			ModificationHash: modHash,
 		}
 
@@ -308,36 +295,6 @@ func main() {
 	if cfg.Lcf && len(changedList) > 0 {
 		log.Printf("fileb0x: list of changed files [%s]", strings.Join(changedList, " | "))
 	}
-
-	// if update {
-	// 	if !cfg.Updater.Enabled {
-	// 		panic("fileb0x: The updater is disabled, enable it in your config file!")
-	// 	}
-
-	// 	// includes port when not present
-	// 	if !strings.HasSuffix(fUpdate, ":"+strconv.Itoa(cfg.Updater.Port)) {
-	// 		fUpdate += ":" + strconv.Itoa(cfg.Updater.Port)
-	// 	}
-
-	// 	up = &updater.Updater{
-	// 		Server: fUpdate,
-	// 		Auth: updater.Auth{
-	// 			Username: cfg.Updater.Username,
-	// 			Password: cfg.Updater.Password,
-	// 		},
-	// 		Workers: cfg.Updater.Workers,
-	// 	}
-
-	// 	// get file hashes from server
-	// 	if err := up.Init(); err != nil {
-	// 		panic(err)
-	// 	}
-
-	// 	// check if an update is available, then updates...
-	// 	if err := up.UpdateFiles(files); err != nil {
-	// 		panic(err)
-	// 	}
-	// }
 }
 
 func getModification(path string, start []byte, end []byte) (string, error) {

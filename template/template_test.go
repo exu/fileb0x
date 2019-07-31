@@ -35,17 +35,16 @@ func TestTemplate(t *testing.T) {
 	defaultCompression := compression.NewGzip()
 
 	tp.Variables = struct {
-		ConfigFile  string
-		Now         string
-		Pkg         string
-		Files       map[string]*file.File
-		Spread      bool
-		DirList     []string
-		Compression *compression.Options
-		Tags        string
-		Debug       bool
-		Remap       string
-		// Updater          updater.Config
+		ConfigFile       string
+		Now              string
+		Pkg              string
+		Files            map[string]*file.File
+		Spread           bool
+		DirList          []string
+		Compression      *compression.Options
+		Tags             string
+		Debug            bool
+		Remap            string
 		ModificationHash string
 	}{
 		Pkg:              "main",
@@ -85,17 +84,16 @@ func TestTemplate(t *testing.T) {
 	defaultCompression = compression.NewGzip()
 
 	tp.Variables = struct {
-		ConfigFile  string
-		Now         string
-		Pkg         string
-		Path        string
-		Name        string
-		Dir         [][]string
-		Tags        string
-		Remap       string
-		Data        string
-		Compression *compression.Options
-		// Updater      updater.Config
+		ConfigFile   string
+		Now          string
+		Pkg          string
+		Path         string
+		Name         string
+		Dir          [][]string
+		Tags         string
+		Remap        string
+		Data         string
+		Compression  *compression.Options
 		Modified     string
 		OriginalPath string
 	}{

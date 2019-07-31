@@ -25,8 +25,7 @@ type Config struct {
 	Unexported bool
 	Clean      bool
 	Debug      bool
-	// Updater    updater.Config
-	Lcf bool
+	Lcf        bool
 }
 
 // Defaults set the default value for some variables

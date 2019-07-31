@@ -3,8 +3,14 @@ All notable changes to this project will be documented in this file.
 
 To update simply run:
 ```bash
-go get -u github.com/UnnoTed/fileb0x
+go get -u github.com/exu/fileb0x
 ```
+
+## 2019-07-31
+### Change
+- Removed updater
+
+
 
 ## 2018-04-17
 ### Changed

@@ -36,7 +36,7 @@ update files remotely                 | yes                           | no
 By using a virtual memory file system you can have access to files like when they're stored in a hard drive instead of a `map[string][]byte` you would be able to use IO writer and reader.
 This means you can `read`, `write`, `remove`, `stat` and `rename` files also `make`, `remove` and `stat` directories.
 
-###### TL;DR 
+###### TL;DR
 Virtual Memory File System has similar functions as a hdd stored files would have.
 
 
@@ -101,7 +101,7 @@ go build
 * `go build` creates the binary `simple` from `package main` in the current folder
 * `./simple` runs the self-contained standalone webserver with built-in files from `public`
 
-<details> 
+<details>
 
 <summary>How to use it?</summary>
 
@@ -136,7 +136,7 @@ or if you wish to generate the embedded files through `go generate` just add and
 
 </details>
 
-<details> 
+<details>
   <summary>What functions and variables fileb0x let me access and what are they for?</summary>
 
 #### HTTP
@@ -144,7 +144,7 @@ or if you wish to generate the embedded files through `go generate` just add and
 var HTTP http.FileSystem
 ```
 
-##### Type 
+##### Type
 [`http.FileSystem`](https://golang.org/pkg/net/http/#FileSystem)
 
 ##### What is it?
@@ -165,7 +165,7 @@ Serve files through a HTTP FileServer.
 http.ListenAndServe(":8080", http.FileServer(myEmbeddedFiles.HTTP))
 ```
 </details>
-<details> 
+<details>
   <summary>How to use it with `echo`?</summary>
 
 ```go
@@ -225,7 +225,7 @@ func main() {
 
 </details>
 
-<details> 
+<details>
   <summary>Examples</summary>
 
 [simple example](https://github.com/UnnoTed/fileb0x/tree/master/_example/simple) -
@@ -287,59 +287,8 @@ func main() {
 }
 ```
 </details>
-<details> 
 
-<summary>Update files remotely</summary>
-
-Having to upload an entire binary just to update some files in a b0x and restart a server isn't something that i like to do...
-
-##### How it works?
-By enabling the updater option, the next time that you generate a b0x, it will include a http server, this http server will use a http basic auth and it contains 1 endpoint `/` that accepts 2 methods: `GET, POST`.
-
-The `GET` method responds with a list of file names and sha256 hash of each file.
-The `POST` method is used to upload files, it creates the directory tree of a new file and then creates the file or it updates an existing file from the virtual memory file system... it responds with a `ok` string when the upload is successful.
-  
-##### How to update files remotely?
-
-1. First enable the updater option in your config file:
-```yaml
-##################
-## yaml example ##
-##################
-
-# updater allows you to update a b0x in a running server
-# without having to restart it
-updater:
-  # disabled by default
-  enabled: false
-
-  # empty mode creates a empty b0x file with just the 
-  # server and the filesystem, then you'll have to upload
-  # the files later using the cmd:
-  # fileb0x -update=http://server.com:port b0x.yaml
-  #
-  # it avoids long compile time
-  empty: false
-
-  # amount of uploads at the same time
-  workers: 3
-
-  # to get a username and password from a env variable
-  # leave username and password blank (username: "")
-  # then set your username and password in the env vars 
-  # (no caps) -> fileb0x_username and fileb0x_password
-  #
-  # when using env vars, set it before generating a b0x 
-  # so it can be applied to the updater server.
-  username: "user" # username: ""
-  password: "pass" # password: ""
-  port: 8041
-```
-2. Generate a b0x with the updater option enabled, don't forget to set the username and password for authentication.
-3. When your files update, just run `fileb0x -update=http://yourServer.com:8041 b0x.toml` to update the files in the running server.
-</details>
-
-<details> 
+<details>
   <summary>Build Tags</summary>
 
 To use build tags for a b0x package just add the tags to the `tags` property in the main object of your config file
@@ -354,7 +303,7 @@ dest: "./static/"
 tags: "!linux"
 ```
 
-You can also have different build tags for a list of files, you must enable the `spread` property in the main object of your config file, then at the `custom` list, choose the set of files which you want a different build tag 
+You can also have different build tags for a list of files, you must enable the `spread` property in the main object of your config file, then at the `custom` list, choose the set of files which you want a different build tag
 ```yaml
 # default: main
 pkg: static
@@ -370,7 +319,7 @@ tags: "windows darwin"
 #
 # example:
 # theres 2 files in the folder assets, they're: hello.json and world.txt
-# when spread is activaTed, fileb0x will make a file: 
+# when spread is activaTed, fileb0x will make a file:
 # b0x.go or [output]'s data, assets_hello.json.go and assets_world.txt.go
 #
 #
@@ -381,7 +330,7 @@ spread: true
 # type: array of objects
 custom:
   # type: array of strings
-  - files: 
+  - files:
     - "start_space_ship.exe"
 
     # build tags for this set of files
@@ -389,7 +338,7 @@ custom:
     tags: "windows"
 
   # type: array of strings
-  - files: 
+  - files:
     - "ufo.dmg"
 
     # build tags for this set of files
@@ -408,7 +357,7 @@ b0xfile_start_space_ship.bat.go # // +build darwin
 
 ### Functions and Variables
 
-<details> 
+<details>
   <summary>FS (File System)</summary>
 
 ```go
@@ -492,7 +441,7 @@ func main() {
 }
 ```
 </details>
-<details> 
+<details>
   <summary>Handler</summary>
 
 ```go
@@ -518,7 +467,7 @@ http.ListenAndServe(":8080", myEmbeddedFiles.Handler)
 ```
 </details>
 
-<details> 
+<details>
   <summary>ReadFile</summary>
 
 ```go
@@ -553,7 +502,7 @@ log.Println(string(topSecretFile))
 ```
 </details>
 
-<details> 
+<details>
   <summary>WriteFile</summary>
 
 ```go
@@ -593,7 +542,7 @@ if err != nil {
 ```
 </details>
 
-<details> 
+<details>
   <summary>WalkDirs</summary>
 
 ```go

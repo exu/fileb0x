@@ -1,4 +1,4 @@
-# all folders and files are relative to the path 
+# all folders and files are relative to the path
 # where fileb0x was run at!
 
 # default: main
@@ -14,31 +14,6 @@ fmt: false
 
 # build tags for the main b0x.go file
 tags: ""
-
-# updater allows you to update a b0x in a running server
-# without having to restart it
-updater:
-  # disabled by default
-  enabled: false
-
-  # empty mode creates a empty b0x file with just the 
-  # server and the filesystem, then you'll have to upload
-  # the files later using the cmd:
-  # fileb0x -update=http://server.com:port b0x.yaml
-  #
-  # it avoids long compile time
-  empty: false
-
-  # amount of uploads at the same time
-  workers: 3
-
-  # to get a username and password from a env variable
-  # leave username and password blank (username: "")
-  # then set your username and password in the env vars 
-  # (no caps) -> fileb0x_username and fileb0x_password
-  username: "user"
-  password: "pass"
-  port: 8041
 
 # compress files
 # at the moment, only supports gzip
@@ -71,7 +46,7 @@ compression:
 # ---------------
 # -- DANGEROUS --
 # ---------------
-# 
+#
 # cleans the destination folder (only b0xfiles)
 # you should use this when using the spread function
 # type: bool
@@ -96,7 +71,7 @@ unexporTed: false
 #
 # example:
 # theres 2 files in the folder assets, they're: hello.json and world.txt
-# when spread is activaTed, fileb0x will make a file: 
+# when spread is activaTed, fileb0x will make a file:
 # b0x.go or [output]'s data, assets_hello.json.go and assets_world.txt.go
 #
 #
@@ -117,7 +92,7 @@ debug: false
 custom:
 
   # type: array of strings
-  - files: 
+  - files:
     - "../../README.md"
     # - "../../bench.bat"
     - "../../*.bat"
@@ -134,7 +109,7 @@ custom:
     # it will only work if spread mode is enabled
     tags: ""
 
-  - files: 
+  - files:
     # everything inside the folder
     # type: array of strings
     - "./public/"
@@ -156,7 +131,7 @@ custom:
 
     # accetps glob
     # type: array of strings
-    exclude: 
+    exclude:
       - "public/assets/data/exclude_me.txt"
 
     # replace strings in the file
@@ -169,7 +144,7 @@ custom:
 
         # case sensitive
         # type: object with strings
-        replace: 
+        replace:
           "{world}": "hello world"
           "{EMAIL}": "contact@company.com"
     # end: replace

@@ -23,7 +23,6 @@ const hextable = "0123456789abcdef"
 type SharedConfig struct {
 	Output      string
 	Compression *compression.Gzip
-	// Updater     updater.Config
 }
 
 // Custom is a set of files with dedicaTed customization
@@ -78,11 +77,6 @@ func (c *Custom) Parse(files *map[string]*file.File, dirs **dir.Dir, config *Sha
 		}
 
 		cb := func(fpath string, d *godirwalk.Dirent) error {
-			// if config.Updater.Empty && !config.Updater.IsUpdating {
-			// 	log.Println("empty mode")
-			// 	return nil
-			// }
-
 			// only files will be processed
 			if d != nil && d.IsDir() {
 				return nil
