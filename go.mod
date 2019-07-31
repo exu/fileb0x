@@ -2,7 +2,7 @@ module github.com/UnnoTed/fileb0x
 
 require (
 	github.com/BurntSushi/toml v0.3.1
-	github.com/airking05/termui v2.2.0+incompatible
+	github.com/airking05/termui v2.1.1
 	github.com/bmatcuk/doublestar v1.1.1
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
