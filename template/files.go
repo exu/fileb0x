@@ -50,7 +50,10 @@ var {{exportedTitle "File"}}{{buildSafeVarName .Path}} = {{.Data}}
 {{end}}
 
 func init() {
-  err := {{exported "CTX"}}.Err()
+  var f webdav.File
+  var err error
+
+  err = {{exported "CTX"}}.Err()
   if err != nil {
 		panic(err)
 	}
@@ -94,7 +97,7 @@ func init() {
   {{end}}
   {{end}}
 
-  f, err := {{exported "FS"}}.OpenFile({{exported "CTX"}}, "{{.Path}}", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0777)
+  f, err = {{exported "FS"}}.OpenFile({{exported "CTX"}}, "{{.Path}}", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0777)
   if err != nil {
     panic(err)
   }
