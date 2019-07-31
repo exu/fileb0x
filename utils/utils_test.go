@@ -21,7 +21,7 @@ func TestFixName(t *testing.T) {
 	assert.Equal(t, `notporn_empty-folder_ufo__-porno.flv`, fixedName)
 }
 
-// https://github.com/UnnoTed/fileb0x/issues/8
+// https://github.com/exu/fileb0x/issues/8
 func TestIssue8(t *testing.T) {
 	type replacer struct {
 		file   string

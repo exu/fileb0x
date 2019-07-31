@@ -2,11 +2,13 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"html/template"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+
 	// your embedded files import here ...
-	"github.com/UnnoTed/fileb0x/_example/gin/myEmbeddedFiles"
+	"github.com/exu/fileb0x/_example/gin/myEmbeddedFiles"
 )
 
 func main() {

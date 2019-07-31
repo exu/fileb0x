@@ -18,14 +18,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/UnnoTed/fileb0x/compression"
-	"github.com/UnnoTed/fileb0x/config"
-	"github.com/UnnoTed/fileb0x/custom"
-	"github.com/UnnoTed/fileb0x/dir"
-	"github.com/UnnoTed/fileb0x/file"
-	"github.com/UnnoTed/fileb0x/template"
-	"github.com/UnnoTed/fileb0x/updater"
-	"github.com/UnnoTed/fileb0x/utils"
+	"github.com/exu/fileb0x/compression"
+	"github.com/exu/fileb0x/config"
+	"github.com/exu/fileb0x/custom"
+	"github.com/exu/fileb0x/dir"
+	"github.com/exu/fileb0x/file"
+	"github.com/exu/fileb0x/template"
+	"github.com/exu/fileb0x/updater"
+	"github.com/exu/fileb0x/utils"
 
 	// just to install automatically
 	_ "github.com/labstack/echo"

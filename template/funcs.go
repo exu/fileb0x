@@ -6,7 +6,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/UnnoTed/fileb0x/config"
+	"github.com/exu/fileb0x/config"
 )
 
 var safeNameBlacklist = map[string]string{}

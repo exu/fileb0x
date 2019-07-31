@@ -17,8 +17,8 @@ import (
 
 	"encoding/json"
 
-	"github.com/UnnoTed/fileb0x/file"
 	"github.com/airking05/termui"
+	"github.com/exu/fileb0x/file"
 )
 
 // Auth holds authentication for the http basic auth

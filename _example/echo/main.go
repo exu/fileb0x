@@ -8,8 +8,8 @@ import (
 	"github.com/labstack/echo"
 
 	// your embedded files import here ...
-	"github.com/UnnoTed/fileb0x/_example/echo/myEmbeddedFiles"
 	"github.com/UnnoTed/open-golang/open"
+	"github.com/exu/fileb0x/_example/echo/myEmbeddedFiles"
 )
 
 func main() {

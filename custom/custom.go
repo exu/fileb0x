@@ -9,12 +9,12 @@ import (
 	"path"
 	"strings"
 
-	"github.com/UnnoTed/fileb0x/compression"
-	"github.com/UnnoTed/fileb0x/dir"
-	"github.com/UnnoTed/fileb0x/file"
-	"github.com/UnnoTed/fileb0x/updater"
-	"github.com/UnnoTed/fileb0x/utils"
 	"github.com/bmatcuk/doublestar"
+	"github.com/exu/fileb0x/compression"
+	"github.com/exu/fileb0x/dir"
+	"github.com/exu/fileb0x/file"
+	"github.com/exu/fileb0x/updater"
+	"github.com/exu/fileb0x/utils"
 	"github.com/karrick/godirwalk"
 )
 

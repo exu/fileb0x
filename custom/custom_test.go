@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/UnnoTed/fileb0x/compression"
-	"github.com/UnnoTed/fileb0x/dir"
-	"github.com/UnnoTed/fileb0x/file"
+	"github.com/exu/fileb0x/compression"
+	"github.com/exu/fileb0x/dir"
+	"github.com/exu/fileb0x/file"
 	"github.com/stretchr/testify/assert"
 )
 
