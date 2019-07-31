@@ -7,9 +7,11 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/karrick/godirwalk v1.7.8
+	github.com/kr/pretty v0.1.0 // indirect
 	github.com/labstack/echo v3.2.1+incompatible
 	github.com/labstack/gommon v0.2.7 // indirect
-	github.com/maruel/panicparse v1.1.1 // indirect
+	github.com/maruel/panicparse v1.1.0 // indirect
+	github.com/maruel/ut v1.0.0 // indirect
 	github.com/mattn/go-colorable v0.0.9 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/mattn/go-runewidth v0.0.3 // indirect
