@@ -7,7 +7,6 @@ import (
 	"github.com/exu/fileb0x/compression"
 	"github.com/exu/fileb0x/dir"
 	"github.com/exu/fileb0x/file"
-	"github.com/exu/fileb0x/updater"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -36,17 +35,17 @@ func TestTemplate(t *testing.T) {
 	defaultCompression := compression.NewGzip()
 
 	tp.Variables = struct {
-		ConfigFile       string
-		Now              string
-		Pkg              string
-		Files            map[string]*file.File
-		Spread           bool
-		DirList          []string
-		Compression      *compression.Options
-		Tags             string
-		Debug            bool
-		Remap            string
-		Updater          updater.Config
+		ConfigFile  string
+		Now         string
+		Pkg         string
+		Files       map[string]*file.File
+		Spread      bool
+		DirList     []string
+		Compression *compression.Options
+		Tags        string
+		Debug       bool
+		Remap       string
+		// Updater          updater.Config
 		ModificationHash string
 	}{
 		Pkg:              "main",
@@ -86,17 +85,17 @@ func TestTemplate(t *testing.T) {
 	defaultCompression = compression.NewGzip()
 
 	tp.Variables = struct {
-		ConfigFile   string
-		Now          string
-		Pkg          string
-		Path         string
-		Name         string
-		Dir          [][]string
-		Tags         string
-		Remap        string
-		Data         string
-		Compression  *compression.Options
-		Updater      updater.Config
+		ConfigFile  string
+		Now         string
+		Pkg         string
+		Path        string
+		Name        string
+		Dir         [][]string
+		Tags        string
+		Remap       string
+		Data        string
+		Compression *compression.Options
+		// Updater      updater.Config
 		Modified     string
 		OriginalPath string
 	}{

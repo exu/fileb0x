@@ -5,7 +5,6 @@ import (
 
 	"github.com/exu/fileb0x/compression"
 	"github.com/exu/fileb0x/custom"
-	"github.com/exu/fileb0x/updater"
 )
 
 // Config holds the json/yaml/toml data
@@ -26,8 +25,8 @@ type Config struct {
 	Unexported bool
 	Clean      bool
 	Debug      bool
-	Updater    updater.Config
-	Lcf        bool
+	// Updater    updater.Config
+	Lcf bool
 }
 
 // Defaults set the default value for some variables
